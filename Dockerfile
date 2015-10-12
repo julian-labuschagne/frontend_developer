@@ -4,6 +4,7 @@ MAINTAINER Julian Labuschagne "julian@kuberfirma.com"
 
 RUN apt-get update
 RUN apt-get install -y byobu htop nodejs npm ruby-dev 
+RUN npm install -g bower grunt-cli
 RUN gem install jekyll
 RUN useradd -ms /bin/bash frontend
 
