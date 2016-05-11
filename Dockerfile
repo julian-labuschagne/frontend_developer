@@ -1,7 +1,7 @@
 # Version: 0.0.1
 FROM ruby:latest
 MAINTAINER Julian Labuschagne "personxx@gmail.com"
-ENV REFRESHED_AT 2016-03-21
+ENV REFRESHED_AT 2016-05-11
 
 RUN apt-get update -yqq && \
   apt-get upgrade -yqq && \
@@ -31,6 +31,7 @@ ENV TERM=linux
 
 EXPOSE 4000
 EXPOSE 9000
+EXPOSE 1313
 EXPOSE 35729
 
 CMD ["/bin/bash"]
