@@ -11,7 +11,7 @@ RUN apt-get update -yqq && \
 # Install Software
 RUN curl -sL https://deb.nodesource.com/setup_4.x | bash - && \
   apt-get install -y nodejs && \
-  npm install -g bower grunt-cli gulp-cli
+  npm install -g bower grunt-cli gulp-cli foundation-cli
 
 # Install Hugo
 RUN curl -o /opt/hugo.tar.gz -SL "https://github.com/spf13/hugo/releases/download/v0.15/hugo_0.15_linux_$(dpkg --print-architecture).tar.gz" && \
