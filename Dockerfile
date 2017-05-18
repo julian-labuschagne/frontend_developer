@@ -1,7 +1,7 @@
 # Version: 0.0.1
 FROM ruby:latest
 MAINTAINER Julian Labuschagne "personxx@gmail.com"
-ENV REFRESHED_AT 2016-05-11
+ENV REFRESHED_AT 2016-12-09
 
 RUN apt-get update -yqq && \
   apt-get upgrade -yqq && \
@@ -28,7 +28,8 @@ RUN curl -o /opt/hugo.tar.gz -SL "https://github.com/spf13/hugo/releases/downloa
   cp /opt/hugo_0.15_linux_amd64/hugo_0.15_linux_amd64 /usr/local/bin/hugo
 
 # Install Jekyll
-RUN gem install jekyll
+RUN gem install jekyll && \
+  gem install octopress-paginate
 
 # Create a non privileged user
 RUN useradd -ms /bin/bash frontend
@@ -38,7 +39,7 @@ ENV LC_ALL C.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 
-USER frontend
+# USER frontend
 VOLUME /home/frontend
 WORKDIR /home/frontend
 ENV TERM=linux
